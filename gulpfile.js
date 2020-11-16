@@ -1,7 +1,10 @@
-const distFolder = require("path").basename(__dirname);
-const appFolder = "app";
-let fs = require("fs");
+
+// FOLDERS
+const distFolder = require("path").basename(__dirname); //project folder name
+const appFolder = "app"; //work folder name
+// PATH TO FOLDER
 const path = {
+  // path to finished project
   build: {
     html: distFolder + "/",
     css: distFolder + "/css/",
@@ -9,6 +12,7 @@ const path = {
     img: distFolder + "/img/",
     fonts: distFolder + "/fonts/",
   },
+  // path to folder name
   src: {
     html: [appFolder + "/*.html", "!" + appFolder + "/_*.html"],
     css: appFolder + "/scss/main.scss",
@@ -16,15 +20,20 @@ const path = {
     img: appFolder + "/img/**/*.+(png|jpg|gif|ico|svg|webp)",
     fonts: appFolder + "/fonts/*.ttf",
   },
+  // watch path
   watch: {
     html: appFolder + "/**/*.html",
     css: appFolder + "/scss/main.scss",
     js: appFolder + "/js/**/*.js",
     img: appFolder + "/img/**/*.+(png|jpg|gif|ico|svg|webp)",
   },
+  // clean path
   clean: "./" + distFolder + "/",
 };
-const { src, dest } = require("gulp"),
+
+
+//VARIABLES DECLARATION
+const { src, dest } = require("gulp"), //
   gulp = require("gulp");
 const rename = require("gulp-rename");
 const concat = require("gulp-concat"),
@@ -46,6 +55,9 @@ const concat = require("gulp-concat"),
   fonter = require("gulp-fonter"),
   browserSync = require("browser-sync").create();
 
+
+// FUNCTIONS
+//browser sync function
 function browserSyncFunc() {
   browserSync.init({
     server: {
@@ -55,7 +67,7 @@ function browserSyncFunc() {
     notify: false,
   });
 }
-
+// style function
 function stylesFunc() {
   return src(path.src.css)
     .pipe(
