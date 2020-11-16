@@ -1,4 +1,4 @@
-const distFolder = "dist";
+const distFolder = require("path").basename(__dirname);
 const appFolder = "app";
 let fs = require("fs");
 const path = {
