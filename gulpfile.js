@@ -1,4 +1,3 @@
-
 // FOLDERS
 const distFolder = require("path").basename(__dirname); //project folder name
 const appFolder = "app"; //work folder name
@@ -31,7 +30,6 @@ const path = {
   clean: "./" + distFolder + "/",
 };
 
-
 //VARIABLES DECLARATION
 const { src, dest } = require("gulp"), //
   gulp = require("gulp");
@@ -54,7 +52,6 @@ const concat = require("gulp-concat"),
   ttf2woff2 = require("gulp-ttf2woff2"),
   fonter = require("gulp-fonter"),
   browserSync = require("browser-sync").create();
-
 
 // FUNCTIONS
 //browser sync function
@@ -159,6 +156,7 @@ function imgFunc() {
         optimizationLevel: 3, //0 to 7,
       })
     )
+    .pipe(newer(path.build.img))
     .pipe(dest(path.build.img))
     .pipe(browserSync.stream());
 }
@@ -182,11 +180,13 @@ gulp.task("otf2ttf", function () {
 });
 
 function htmlFunc() {
-  return src(path.src.html)
-    .pipe(fileInclude())
-    .pipe(webpHtml())
-    .pipe(dest(path.build.html))
-    .pipe(browserSync.stream());
+  return (
+    src(path.src.html)
+      .pipe(fileInclude())
+      // .pipe(webpHtml())
+      .pipe(dest(path.build.html))
+      .pipe(browserSync.stream())
+  );
 }
 
 function watchFiles() {

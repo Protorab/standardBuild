@@ -6,7 +6,7 @@ $(document).ready(function () {
     greedy: false,
   });
   //submit form
-  $("form").submit(function () {
+  $(".form__submit").submit(function () {
     //Change
     var th = $(this);
     $.ajax({
