@@ -249,31 +249,58 @@ animate__fadeIn">
         <div class="point_description">
           <a target="_blank"
             href="https://yandex.by/maps/158/mogilev/?ll=30.360245%2C53.920773&mode=routes&rtext=~53.920773%2C30.360245&rtt=mt&ruri=~ymapsbm1%3A%2F%2Fgeo%3Fll%3D30.360%252C53.921%26spn%3D0.001%252C0.001%26text%3D%25D0%2591%25D0%25B5%25D0%25BB%25D0%25B0%25D1%2580%25D1%2583%25D1%2581%25D1%258C%252C%2520%25D0%259C%25D0%25B0%25D0%25B3%25D1%2596%25D0%25BB%25D1%2591%25D1%259E%252C%2520%25D0%259A%25D0%25B0%25D0%25BB%25D1%2583%25D0%25B6%25D1%2581%25D0%25BA%25D0%25B0%25D1%258F%2520%25D0%25B2%25D1%2583%25D0%25BB%25D1%2596%25D1%2586%25D0%25B0%252C%252015%25D0%25BA1&z=17"
-            class="h4">г. Могилев, Калужская 15/1 павильон 2</a>
-          <a class="h4 description_phone" href="tel:+37529 131 0310">+37529 131 0310</a>
-          <a class="h4 description_phone" href="tel:+37529 131 0310">+37529 131 0310</a>
-        </div>
-      </div>
-      <div class="shipping_points_item animate__animated
-            animate__fadeIn delay-04">
-        <a href="img/img_adress_2.jpg" class="image-popup-no-margins point_img"><img src="img/img_adress_2.jpg" alt=""
-            title="Шклов, Ленинская, 1, Центральный рынок пав. 72"></a>
+            class="h4">г.Минск, Агрогородок Сеница, ул.Набережная, д. 100, корп.1</a>
+          <a class="h4 description_phone" href="tel:+375 (29) 173-77-77
+">+375 (29) 173-77-77
+          </a>
 
-        <div class="point_description">
-          <a target="_blank"
-            href="https://yandex.by/maps/?ll=30.328860%2C54.063550&mode=routes&rtext=~54.208538%2C30.289772&rtt=mt&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D1069691960&z=11"
-            class="h4">Шклов, Ленинская, 1, Центральный рынок пав. 72</a>
-          <a class="h4" href="tel:+37529 131 0310">+37544 590 6000</a>
         </div>
       </div>
+
     </div>
+    <script async type="text/javascript">
+      // Функция ymaps.ready() будет вызвана, когда
+      // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+      ymaps.ready(init);
 
-    <iframe class="shipping_map _desctop_map animate__animated animate__fadeIn delay-06"
+      function init() {
+
+        // Создание карты.
+        var viewport = {
+          width: $(window).width(),
+          height: $(window).height()
+        };
+        var _width = viewport.width,
+          _zoom;
+        if (_width > 1024) {
+          _zoom = 17;
+        }
+        if (_width < 1024) {
+          _zoom = 17;
+        }
+        var myMap = new ymaps.Map("map", {
+          center: [53.816294, 27.503203],
+          zoom: _zoom,
+          // controls: []
+        });
+        var myPlacemark = new ymaps.Placemark([53.816459, 27.503103], {}, {
+          iconLayout: 'default#image',
+          iconImageHref: '/img/pin_icon.png',
+          iconImageSize: [35, 45],
+          iconImageOffset: [-10, -27]
+        })
+        myMap.geoObjects
+          .add(myPlacemark)
+        myMap.behaviors.disable('scrollZoom');
+      }
+    </script>
+    <div id="map" class="shipping_map animate__animated animate__fadeIn delay-06"></div>
+    <!-- <iframe class="shipping_map _desctop_map animate__animated animate__fadeIn delay-06"
       src="https://yandex.ru/map-widget/v1/?um=constructor%3A6952022e136075454dca39d484436f7e457c217dac8aea741dc95048fc9ebc08&amp;source=constructor"
       frameborder="0"></iframe>
     <iframe class="shipping_map _mobile_map animate__animated animate__fadeIn delay-06"
       src="https://yandex.ru/map-widget/v1/?um=constructor%3A22454b49607466f8d774dc5d751a80e0b95bd73bb99816f3e875a009b25e9785&amp;source=constructor"
-      width="100%" height="250" frameborder="0"></iframe>
+      width="100%" height="250" frameborder="0"></iframe> -->
     <div class="container steps_grid">
       <div class="steps_grid_item wow animate__animated
 animate__fadeIn delay-01">
