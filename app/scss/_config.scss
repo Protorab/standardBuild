@@ -32,7 +32,7 @@
 
 
 // USER VARIABLES SECTION
-$accent: orange; // Accent Color
+$accent: rgb(79, 79, 79); // Accent Color
 $fontsize: 10px; // Body Font Size
 $textcolor: #000; // Text Color
 $lineheight: 1.65; // Document Line Height
@@ -145,10 +145,10 @@ sans-serif; // System Font Family
 	}
 }
 
-@include font('Roboto', normal, 400, '../fonts/Roboto-Regular.woff');
-@include font('Roboto', italic, 400, '../fonts/Roboto-Italic.woff');
-@include font('Roboto', normal, 700, '../fonts/Roboto-Bold.woff');
-@include font('Roboto', italic, 700, '../fonts/Roboto-Bolditalic.woff');
+@include font('PT Sans', normal, 400, '../fonts/pt-sans-v12-latin_cyrillic-regular.woff');
+
+@include font('PT Sans', normal, 700, '../fonts/pt-sans-v12-latin_cyrillic-700.woff');
+
 
 // GENERAL DOCUMENT STYLES
 

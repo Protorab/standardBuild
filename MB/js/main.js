@@ -14576,20 +14576,6 @@ $(document).ready(function () {
     speed: 1800,
   });
 
-  // video
-  $(".about_us_video").click(function (e) {
-    $(".video_control").is(":visible")
-      ? $(".video_control").fadeOut()
-      : $(".video_control").fadeIn();
-
-    this.paused ? this.play() : this.pause();
-    e.preventDefault();
-  });
-  $(".video_control").click(function (e) {
-    $(".about_us_video").click();
-    e.preventDefault();
-  });
-
   // галлерея
   $(".works_galery").magnificPopup({
     delegate: "a",
@@ -14614,7 +14600,7 @@ $(document).ready(function () {
   $(".works_galery_slider").slick({
     dots: true,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     draggable: true,
     touchMove: true,
@@ -14632,14 +14618,14 @@ $(document).ready(function () {
       {
         breakpoint: 800,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 533,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
@@ -14657,7 +14643,7 @@ $(document).ready(function () {
   });
 
   //  попап картинок
-  $(".image-popup-vertical-fit").magnificPopup({
+  $(".popup__img").magnificPopup({
     type: "image",
     closeOnContentClick: true,
     mainClass: "mfp-img-mobile",

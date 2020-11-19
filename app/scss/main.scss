@@ -15,6 +15,11 @@
   @media only screen and (max-width : 1600px) {
     max-width: 90%;
   }
+
+  @media only screen and (max-width : 1369px) {
+    max-width: 95%;
+  }
+
 }
 
 .d {
@@ -129,7 +134,7 @@ h,
 
   &4 {
     // font-family: 'Roboto Slab';
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     line-height: 130%;
     font-weight: 700;
     position: relative;
@@ -701,11 +706,7 @@ footer,
     content: "";
     width: 100%;
     height: 0.1rem;
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
+    @include _border_radius(5px);
     display: block;
     background: #4066c4;
     margin-top: 0.8rem;
@@ -749,11 +750,7 @@ footer,
     cursor: pointer;
     width: 13px;
     height: 13px;
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
+    @include _border_radius(100%);
 
     button {
       display: none;
@@ -779,7 +776,7 @@ footer,
     min-width: 12.5rem;
     width: auto;
     z-index: 0;
-    right: 16rem;
+    right: 51rem;
     bottom: 11.4rem;
     bottom: 20rem;
 
@@ -797,11 +794,12 @@ footer,
     }
 
     @media only screen and (max-width : 1600px) {
-      right: 9rem;
+      right: 35rem;
     }
 
     @media only screen and (max-width : 1280px) {
-      bottom: 15rem;
+      bottom: 20rem;
+      right: 32rem;
     }
 
     @media only screen and (max-width : 1024px) {
@@ -920,11 +918,7 @@ footer,
 
     opacity: 1;
     background: #282727;
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
+    @include _border_radius(5px);
 
     @media only screen and (max-width : 1024px) {
       width: 90%;
@@ -958,7 +952,7 @@ footer,
   color: #282727;
   background: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
-  border-radius: 2px;
+  @include _border_radius(5px);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1.5rem 5rem;
@@ -1030,7 +1024,7 @@ footer,
     }
 
     &:after {
-      width: 35rem;
+      width: 27%;
     }
   }
 
@@ -1039,7 +1033,7 @@ footer,
     content: "";
     display: block;
     background: #282727;
-    width: 528px;
+    width: 35%;
     height: 90%;
     right: 0;
 
@@ -1103,12 +1097,19 @@ footer,
   top: 0;
   position: relative;
   z-index: 2;
-  width: 75%;
+  width: 65%;
   min-height: 100%;
   height: auto;
 
+  img {
+    width: 100%;
+    height: auto;
+    object-position: center;
+    object-fit: cover;
+  }
+
   @media only screen and (max-width : 2000px) {
-    width: 80%;
+    // width: 80%;
   }
 
   @media only screen and (max-width : 1366px) {}
@@ -1168,11 +1169,7 @@ footer,
       width: 150%;
     }
 
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
+    @include _border_radius(5px);
   }
 }
 
@@ -1219,7 +1216,9 @@ footer,
   }
 
   .container {
+    min-height: 500px;
     width: 100%;
+    align-items: flex-start;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 12rem;
@@ -1245,6 +1244,9 @@ footer,
 
 .about_us_section_col {
   position: relative;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
 
   p {
     margin-bottom: 2rem;
@@ -1265,8 +1267,9 @@ footer,
 
 .about_us_video {
   display: block;
-  width: 100%;
   min-width: 928px;
+  width: 100%;
+  min-height: 500px;
   height: 100%;
   cursor: pointer;
   @include _transition(.3s);
@@ -1369,10 +1372,7 @@ footer,
 .services_grid {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 520px));
-
-
-
+  grid-template-columns: repeat(auto-fill, minmax(100px, 24%));
   grid-gap: 2rem;
   justify-content: center;
 
@@ -1414,6 +1414,8 @@ footer,
 .services_item {
   position: relative;
   overflow: hidden;
+  width: 100%;
+  max-height: 270px;
 
   .h4,
   .more_info {
@@ -1422,11 +1424,11 @@ footer,
     align-items: center;
     justify-content: flex-start;
     background: rgba(64, 102, 196, .8);
-    padding: 0 3.5rem;
+    padding: 1rem 2.5rem;
     text-transform: uppercase;
     position: absolute;
     width: 100%;
-    min-height: 90px;
+    min-height: 70px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -1440,14 +1442,17 @@ footer,
     font-size: 2rem;
     background: #4066c4;
 
+
     &:after {
+      @include _transition(.8s);
       position: absolute;
       content: '';
       background: #282727;
       height: 2px;
       display: block;
-      width: 19%;
-      bottom: 3rem;
+      // width: 30%;
+      width: 0;
+      bottom: 1.5rem;
       border-radius: 5px;
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
@@ -1472,6 +1477,10 @@ footer,
     }
 
     .more_info {
+      &:after {
+        width: 30%;
+      }
+
       transform: translateY(0);
       -webkit-transform: translateY(0);
       -moz-transform: translateY(0);
@@ -1480,11 +1489,7 @@ footer,
     }
   }
 
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
+  @include _border_radius(5px);
   transition:none;
   -webkit-transition:none;
   -moz-transition:none;
@@ -1495,6 +1500,8 @@ footer,
 .services_item_img {
   width: 100%;
   height: auto;
+  object-position: top left;
+  object-fit: cover;
 }
 
 .why_we_title {
@@ -1534,6 +1541,7 @@ footer,
     width: 100%;
     height: auto;
     margin-right: 3rem;
+    @include _border_radius(1000%);
   }
 
   .h4 {
@@ -1543,11 +1551,7 @@ footer,
 
   background: #F2F2F2;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
+  @include _border_radius(5px);
 
   >* {
     flex: 1 250px;
@@ -1604,11 +1608,7 @@ footer,
     max-width: 450px;
     max-height: 370px;
     width: 100%;
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
+    @include _border_radius(5px);
   }
 }
 
@@ -1750,11 +1750,7 @@ footer,
     cursor: pointer;
     width: 13px;
     height: 13px;
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
+    @include _border_radius(100%);
   }
 
   &.__active_tab {
@@ -1825,7 +1821,7 @@ footer,
   &::before {
     z-index: -1;
     background: #282727;
-    border-radius: 2px;
+    @include _border_radius(5px);
     content: '';
     top: 0;
     left: 0;
@@ -1833,10 +1829,7 @@ footer,
     width: 100%;
     height: 156px;
     position: absolute;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
+
 
     @media only screen and (max-width : 1440px) {
       height: 136px;
@@ -2149,11 +2142,7 @@ footer,
     width: 100%;
     height: 75px;
     background: #282727;
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
+    @include _border_radius(5px);
 
     @media only screen and (max-width : 320px) {
       height: 35%;
@@ -2188,18 +2177,10 @@ footer,
   z-index: 1;
   background: #F2F2F2;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
+  @include _border_radius(5px);
 
   img {
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
+    @include _border_radius(5px);
   }
 
   @media only screen and (max-width : 1366px) {
@@ -2240,7 +2221,7 @@ footer,
 
 .news_grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   justify-content: space-between;
   grid-gap: 2rem;
 
@@ -2305,6 +2286,8 @@ footer,
 }
 
 .news_grid_item {
+  overflow: hidden;
+  @include _border_radius(5px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2339,11 +2322,8 @@ footer,
       height: 2px;
       width: 100%;
       background: #4066c4;
-      border-radius: 3px;
-      -webkit-border-radius: 3px;
-      -moz-border-radius: 3px;
-      -ms-border-radius: 3px;
-      -o-border-radius: 3px;
+      @include _border_radius(3px);
+
     }
 
     &:hover {
@@ -2373,11 +2353,20 @@ footer,
 }
 
 .news_wrap {
+  // @include _border_radius(10px);
+  @include _border_radius(5px);
   overflow: hidden;
   position: relative;
   margin-bottom: 2rem;
-  max-height: 400px;
+  max-height: 350px;
   height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 
   @media only screen and (max-width : 1280px) {
     max-height: 100%;
@@ -2417,6 +2406,7 @@ footer,
 .review {
   margin: 0 6rem;
   @include _transition(.8s);
+  @include _border_radius(5px);
   overflow: hidden;
   text-overflow: ellipsis;
   display: flex;
@@ -2426,12 +2416,7 @@ footer,
   padding: 2.5rem 3.5rem;
   width: 320px;
   height: 250px;
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
-  // border: 1px solid #0A2D1E;
+
   border: 1px solid transparent;
 
   &.slick-slide {
@@ -2541,12 +2526,12 @@ footer,
     width: 100%;
     height: 220px;
     background: #282727;
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
+    @include _border_radius(5px);
   }
+}
+
+.questions_title {
+  text-align: center;
 }
 
 ._thx_title,
@@ -2562,11 +2547,7 @@ footer,
     padding: 4.8rem 6.3rem;
     background: #F2F2F2;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
+    @include _border_radius(5px);
 
     .def_btn {
       text-align: center;
@@ -2588,7 +2569,7 @@ footer,
     //   @include _transition(.2s);
     padding: 7.4rem 6.9rem;
     background: #FFFFFF;
-    border-radius: 2px;
+    @include _border_radius(5px);
     width: 500px;
     height: 400px;
     overflow: hidden;
@@ -2601,11 +2582,7 @@ footer,
     left: 0;
     right: 0;
     margin: auto auto;
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
+    @include _border_radius(5px);
 
     .def_btn {
       width: 100%;
@@ -2637,16 +2614,15 @@ footer,
   height: 2rem;
   cursor: pointer;
 
-  path {
-    @include _transition(.2s);
+  span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    @include _border_radius(1000px);
   }
 
-  &:hover {
 
-    path {
-      fill: #4066c4;
-    }
-  }
+  &:hover {}
 }
 
 .form_input {
@@ -2752,6 +2728,7 @@ footer,
 
 .questions_img {
   position: absolute;
+  width: 200px;
 
   @media only screen and (max-width : 1280px) {
     width: 200px;
@@ -3084,11 +3061,7 @@ footer,
     cursor: pointer;
     background: #2D303B;
 
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
+    @include _border_radius(5px);
     @include _transition(.2s);
   }
 
@@ -3158,11 +3131,7 @@ footer,
     margin-bottom: 0;
   }
 
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
+  @include _border_radius(5px);
 
   @media only screen and (max-width : 375px) {
     padding: 1rem;
@@ -3210,11 +3179,7 @@ footer,
   overflow: hidden;
   background: #F2F2F2;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
+  @include _border_radius(5px);
 
   @media only screen and (max-width : 375px) {
     padding: 3rem;
@@ -3244,11 +3209,8 @@ footer,
   width: 175px;
   height: 145px;
   overflow: hidden;
-  border-radius: 2px 0px 2px 2px;
-  -webkit-border-radius: 2px 0px 2px 2px;
-  -moz-border-radius: 2px 0px 2px 2px;
-  -ms-border-radius: 2px 0px 2px 2px;
-  -o-border-radius: 2px 0px 2px 2px;
+  @include _border_radius(5px 0 5px 5px);
+
 
   @media only screen and (max-width : 375px) {
     margin-bottom: 2rem;
@@ -3304,11 +3266,7 @@ footer,
     width: 100%;
     height: 2px;
     background: #4066c4;
-    border-radius: 2px 0px 2px 2px;
-    -webkit-border-radius: 2px 0px 2px 2px;
-    -moz-border-radius: 2px 0px 2px 2px;
-    -ms-border-radius: 2px 0px 2px 2px;
-    -o-border-radius: 2px 0px 2px 2px;
+    @include _border_radius(5px 0 5px 5px);
   }
 
   @media only screen and (max-width : 375px) {
@@ -3633,7 +3591,7 @@ footer,
 
   background: #F2F2F2;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
-  border-radius: 2px;
+  @include _border_radius(5px);
   width: 100%;
   height: 100%;
 
@@ -3652,11 +3610,7 @@ footer,
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
+  @include _border_radius(5px);
 
   @media only screen and (max-width : 1368px) {
     padding: 2rem;
@@ -3790,11 +3744,7 @@ footer,
       right: 0;
       bottom: 0;
       background: #F2F2F2;
-      border-radius: 2px;
-      -webkit-border-radius: 2px;
-      -moz-border-radius: 2px;
-      -ms-border-radius: 2px;
-      -o-border-radius: 2px;
+      @include _border_radius(5px);
       z-index: -1;
     }
 
@@ -3926,11 +3876,7 @@ footer,
     max-height: 475px;
     width: 100%;
     height: auto;
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
+    @include _border_radius(5px);
 
 
   }
@@ -4126,11 +4072,7 @@ footer,
   }
 
   img {
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
+    @include _border_radius(5px);
   }
 
   .def_btn {
@@ -4455,11 +4397,7 @@ footer,
       border: 1px solid transparent;
       // border: 1px solid #4066c4;
       box-sizing: border-box;
-      border-radius: 2px;
-      -webkit-border-radius: 2px;
-      -moz-border-radius: 2px;
-      -ms-border-radius: 2px;
-      -o-border-radius: 2px;
+      @include _border_radius(5px);
 
       &:hover {
         border-color: #4066c4;
@@ -4512,11 +4450,7 @@ footer,
 
   border: 2px solid #0A2D1E;
   box-sizing: border-box;
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
+  @include _border_radius(5px);
 }
 
 .quize_chk:checked {
@@ -4558,11 +4492,7 @@ footer,
       background: #4066c4;
     }
 
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
+    @include _border_radius(5px);
   }
 
   &:before {
@@ -4924,11 +4854,7 @@ input {
       img {
         height: 84px;
         margin-bottom: 2rem;
-        border-radius: 2px;
-        -webkit-border-radius: 2px;
-        -moz-border-radius: 2px;
-        -ms-border-radius: 2px;
-        -o-border-radius: 2px;
+        @include _border_radius(5px);
       }
     }
 
@@ -5026,11 +4952,7 @@ input {
       border: 1px solid transparent;
       // border: 1px solid #4066c4;
       box-sizing: border-box;
-      border-radius: 2px;
-      -webkit-border-radius: 2px;
-      -moz-border-radius: 2px;
-      -ms-border-radius: 2px;
-      -o-border-radius: 2px;
+      @include _border_radius(5px);
 
       &:hover {
         border-color: #4066c4;
