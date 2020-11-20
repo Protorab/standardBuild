@@ -1,3 +1,5 @@
+/** @format */
+
 $(document).ready(function () {
   //inputmask
   $(".telephone").inputmask({

@@ -1,0 +1,208 @@
+<section id="shipping" class="section shipping_section">
+  <div class="container d-flex-jc-center d-flex-column">
+    <h3 class="h3 shipping_title">Доставка и оплата</h3>
+    <div class="shipping_area_tabs">
+      <span class="border_top left "></span>
+      <a href="#shipping" data-type="shipping" class="shipping_area_tab __active_tab">
+        <span></span>
+        <h4 class="h4">Доставка</h4>
+      </a>
+      <span class="border_top center"></span>
+      <a href="#shipping" data-type="payments" class="shipping_area_tab">
+        <span></span>
+        <h4 class="h4">Оплата</h4>
+      </a>
+      <span class="border_top right"></span>
+    </div>
+  </div>
+  <div class="__default_tab_content shipping_area_tab_content     animate__animated animate__fadeIn  area_shipping">
+    <div class="container shipping_points">
+      <div class="shipping_points_item animate__animated
+            animate__fadeIn delay-02">
+        <a href="img/img_adress_1.jpg" class="popup__img point_img"><img src="img/img_adress_1.jpg" alt=""
+            title="г. Могилев, Калужская 15/1 павильон 2"></a>
+        <div class="point_description">
+          <a target="_blank"
+            href="https://yandex.by/maps/157/minsk/?ll=27.503917%2C53.816686&mode=routes&rtext=~53.816352%2C27.503251&rtt=mt&ruri=~&z=17"
+            class="h4">г.Минск, Агрогородок Сеница, ул.Набережная, д. 100, корп.1</a>
+          <a class="h4 description_phone" href="tel:+375 (29) 173-77-77
+">+375 (29) 173-77-77
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+    <script async type="text/javascript">
+      // Функция ymaps.ready() будет вызвана, когда
+      // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+      ymaps.ready(init);
+
+      function init() {
+
+        // Создание карты.
+        var viewport = {
+          width: $(window).width(),
+          height: $(window).height()
+        };
+        var _width = viewport.width,
+          _zoom;
+        if (_width > 1024) {
+          _zoom = 17;
+        }
+        if (_width < 1024) {
+          _zoom = 17;
+        }
+        var myMap = new ymaps.Map("map", {
+          center: [53.816294, 27.503203],
+          zoom: 17,
+          // controls: []
+        });
+        var myPlacemark = new ymaps.Placemark([53.816459, 27.503103], {}, {
+          iconLayout: 'default#image',
+          iconImageHref: '/img/pin_icon.png',
+          iconImageSize: [35, 45],
+          iconImageOffset: [-10, -27]
+        })
+        myMap.geoObjects
+          .add(myPlacemark)
+        myMap.behaviors.disable('scrollZoom');
+      }
+    </script>
+    <div id="map" class="shipping_map animate__animated animate__fadeIn delay-06"></div>
+    <!-- <iframe class="shipping_map _desctop_map animate__animated animate__fadeIn delay-06"
+      src="https://yandex.ru/map-widget/v1/?um=constructor%3A6952022e136075454dca39d484436f7e457c217dac8aea741dc95048fc9ebc08&amp;source=constructor"
+      frameborder="0"></iframe>
+    <iframe class="shipping_map _mobile_map animate__animated animate__fadeIn delay-06"
+      src="https://yandex.ru/map-widget/v1/?um=constructor%3A22454b49607466f8d774dc5d751a80e0b95bd73bb99816f3e875a009b25e9785&amp;source=constructor"
+      width="100%" height="250" frameborder="0"></iframe> -->
+    <div class="container steps_grid">
+      <div class="steps_grid_item wow animate__animated
+animate__fadeIn delay-01">
+        <span class="_top_triangle ">
+
+        </span>
+        <span class=" _bottom_triangle ">
+
+        </span>
+        <span class="_top_triangle _gray">
+
+        </span>
+        <span class=" _bottom_triangle _gray">
+
+        </span>
+
+        <!-- <img src="img/paimants_step/img_1.png" alt="" class="step_item_bg"> -->
+        <img src="img/icon/step_1.svg" alt="">
+        <p class="p">Оставьте заявку <br>
+          или закажите звонок</p>
+      </div>
+      <div class="steps_grid_item wow animate__animated
+animate__fadeIn delay-02">
+        <!-- <img src="img/paimants_step/img_1.png" alt="" class="step_item_bg"> -->
+        <span class="_top_triangle ">
+
+        </span>
+        <span class=" _bottom_triangle ">
+
+        </span>
+        <span class="_top_triangle _gray">
+
+        </span>
+        <span class=" _bottom_triangle _gray">
+
+        </span>
+        <img src="img/icon/step_2.svg" alt="">
+        <p class="p">Обсуждение условий, <br>
+          (БЕСПЛАТНЫЙ замер)</p>
+      </div>
+      <div class="steps_grid_item wow animate__animated
+animate__fadeIn delay-03">
+        <!-- <img src="img/paimants_step/img_1.png" alt="" class="step_item_bg"> -->
+        <span class="_top_triangle ">
+
+        </span>
+        <span class=" _bottom_triangle ">
+
+        </span>
+        <span class="_top_triangle _gray">
+
+        </span>
+        <span class=" _bottom_triangle _gray">
+
+        </span>
+        <img src="img/icon/step_3.svg" alt="">
+        <p class="p">Заключение договора</p>
+      </div>
+      <div class="steps_grid_item wow animate__animated
+animate__fadeIn delay-04">
+        <!-- <img src="img/paimants_step/img_1.png" alt="" class="step_item_bg"> -->
+        <span class="_top_triangle ">
+
+        </span>
+        <span class=" _bottom_triangle ">
+
+        </span>
+        <span class="_top_triangle _gray">
+
+        </span>
+        <span class=" _bottom_triangle _gray">
+
+        </span>
+        <img src="img/icon/step_4.svg" alt="">
+        <p class="p">Быстрая доставка</p>
+      </div>
+    </div>
+  </div>
+  <div class=" shipping_area_tab_content area_payments  animate__animated animate__fadeIn">
+    <div class="container payments_grid">
+      <div class="payments_grid_item animate__animated
+            animate__fadeIn delay-02">
+        <h4 class="payments_item_title h4">Наличный и безналичный расчет</h4>
+        <div class="payments_item_description">
+          <div class="payments_description_item">
+            <img src="img/img_5.png" alt="">
+          </div>
+          <div class="payments_description_item">
+            <img src="img/img_6.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="payments_grid_item animate__animated
+            animate__fadeIn delay-04">
+        <h4 class="payments_item_title h4">Кредит</h4>
+        <div class="payments_item_description">
+          <div class="payments_description_item">
+            <img src="img/img_7.png" alt="">
+            <p class="p">Альфа Банк <br>
+              3,4 месяца</p>
+          </div>
+        </div>
+      </div>
+      <div class="payments_grid_item animate__animated
+animate__fadeIn delay-06">
+        <h4 class="payments_item_title h4">Рассрочка</h4>
+        <div class="payments_item_description">
+          <div class="payments_description_item">
+            <img src="img/img_8.png" alt="">
+            <p class="p">Карта Халва</p>
+          </div>
+          <div class="payments_description_item">
+            <img src="img/img_9.png" alt="">
+            <p class="p">Карта покупок</p>
+          </div>
+          <div class="payments_description_item">
+            <img src="img/img_10.png" alt="">
+            <p class="p">Беларусбанк, <br>
+              6 - 36 месяцев</p>
+          </div>
+          <div class="payments_description_item">
+            <img src="img/img_11.png" alt="">
+            <p class="p">Альфа Банк <br>
+              3,4 месяца</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

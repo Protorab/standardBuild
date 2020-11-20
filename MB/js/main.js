@@ -1,3 +1,5 @@
+/** @format */
+
 /*! jQuery v3.5.1 | (c) JS Foundation and other contributors | jquery.org/license */ !(function (
   e,
   t
@@ -14506,6 +14508,8 @@
   (b["default"] = r), (a.exports = b["default"]);
 });
 ;
+/** @format */
+
 $(document).ready(function () {
   //inputmask
   $(".telephone").inputmask({
@@ -14600,6 +14604,7 @@ $(document).ready(function () {
   $(".works_galery_slider").slick({
     dots: true,
     infinite: true,
+
     slidesToShow: 4,
     slidesToScroll: 1,
     draggable: true,
@@ -14658,6 +14663,7 @@ $(document).ready(function () {
     prevArrow:
       '<div class="slick-prev custom_slick_arrow"><span> </span><span></span></div>',
     infinite: true,
+    // fade: true,
     slidesToShow: 3,
     slidesToScroll: 1,
     draggable: true,
@@ -14780,6 +14786,20 @@ $(document).ready(function () {
   });
 
   //
+
+  //паралакс при ховере
+  $(window).mousemove(function (e) {
+    var item = $(".questions_img");
+    if ($(window).width() >= 1050) {
+      item.each(function () {
+        let x = e.clientX / window.innerWidth;
+        let y = e.clientY / window.innerHeight;
+        $(this).css({
+          transform: "translate3d(-" + x * 70 + "px, -" + y * 70 + "px, 0px)",
+        });
+      });
+    }
+  });
 });
 document.addEventListener("DOMContentLoaded", () => {
   // Custom JS
