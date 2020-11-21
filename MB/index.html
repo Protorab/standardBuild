@@ -56,7 +56,7 @@
         <div class="phones">
           <a class="h4" href="tel:+375 (29) 173-77-77">+375 (29) 173-77-77</a>
         </div>
-        <a href="#form" class="call_back_btn show_form_btn">Перезвоните мне</a>
+        <a data-subject="Перезвоните мне" href="#form" class="show_form_btn">Перезвоните мне</a>
         <ul class="_m_menu">
           <li><a href="index.html#services">Каталог</a></li>
           <li><a href="index.html#about_us">О нас</a></li>
@@ -269,31 +269,31 @@ animate__fadeIn delay-04">
   </div>
   <div class="works_galery works_galery_slider container d-flex-jc-center wow animate__animated
 animate__fadeIn">
-    <a href="img/slider/works/img_1.jpg" title="Название работы">
+    <a class="works__item" href="img/slider/works/img_1.jpg" title="Название работы">
       <img src="img/slider/works/img_1.jpg">
     </a>
-    <a href="img/slider/works/img_2.jpg" title="Название работы">
+    <a class="works__item" href="img/slider/works/img_2.jpg" title="Название работы">
       <img src="img/slider/works/img_2.jpg">
     </a>
-    <a href="img/slider/works/img_3.jpg" title="Название работы">
+    <a class="works__item" href="img/slider/works/img_3.jpg" title="Название работы">
       <img src="img/slider/works/img_3.jpg">
     </a>
-    <a href="img/slider/works/img_4.jpg" title="Название работы">
+    <a class="works__item" href="img/slider/works/img_4.jpg" title="Название работы">
       <img src="img/slider/works/img_4.jpg">
     </a>
-    <a href="img/slider/works/img_7.jpg" title="Название работы">
+    <a class="works__item" href="img/slider/works/img_7.jpg" title="Название работы">
       <img src="img/slider/works/img_7.jpg">
     </a>
-    <a href="img/slider/works/img_11.jpg" title="Название работы">
+    <a class="works__item" href="img/slider/works/img_11.jpg" title="Название работы">
       <img src="img/slider/works/img_11.jpg">
     </a>
-    <a href="img/slider/works/img_14.jpg" title="Название работы">
+    <a class="works__item" href="img/slider/works/img_14.jpg" title="Название работы">
       <img src="img/slider/works/img_14.jpg">
     </a>
-    <a href="img/slider/works/img_17.jpg" title="Название работы">
+    <a class="works__item" href="img/slider/works/img_17.jpg" title="Название работы">
       <img src="img/slider/works/img_17.jpg">
     </a>
-    <a href="img/slider/works/img_21.jpg" title="Название работы">
+    <a class="works__item" href="img/slider/works/img_21.jpg" title="Название работы">
       <img src="img/slider/works/img_21.jpg">
     </a>
   </div>
@@ -746,7 +746,7 @@ animate__fadeIn delay-03">
       <h3 class="h3 questions_title _def_title">Остались вопросы?</h3>
       <h3 class="h3 questions_title _thx_title">Остались вопросы?</h3>
       <input type="text" name="Имя" id="question_name" class="form_input _questions_input" required placeholder="Имя">
-      <input type="tel" class="phone form_input _questions_input" name="Телефон" id="phone" required
+      <input type="tel" class="telephone phone form_input _questions_input" name="Телефон" id="phone" required
         placeholder="Телефон">
       <textarea name="Сообщение" id="question_msg" class="hide_elem" cols="30" rows="10"></textarea>
       <input id="questions_submit" type="submit">
@@ -755,7 +755,28 @@ animate__fadeIn delay-03">
   </div>
 </section>
 
-
+<div class="poupup_wrap form__popup">
+  <div class="overley"></div>
+  <form action="" class="form poupup_form animate__animated animate__bounceIn">
+    <div class="poupup_form_close">
+      <span></span>
+    </div>
+    <h4 class="h4 poupup_form_title _def_title">Оставьте ваши данные, <br>
+      мы перезвоним и уточним детали заказа</h4>
+    <h4 class="h4 poupup_form_title _thx_title">Спасибо!</h4>
+    <h4 class="h4 poupup_form_title _download_title">Оставьте ваши данные, <br>
+      мы вышлем вам каталог </h4>
+    <input type="hidden" name="project_name" value="">
+    <input type="hidden" name="admin_email" value="acnt4wk@gmail.com">
+    <input type="hidden" id="form__subject" name="form_subject" value="">
+    <input type="text" name="Имя" id="poupup_name" class="form_input _poupup_input" required placeholder="Имя">
+    <input type="tel" class="telephone phone form_input _poupup_input" name="Телефон" id="poupup_phone" required
+      placeholder="Телефон">
+    <textarea name="Сообщение" id="poupup_msg" class="hide_elem" cols="30" rows="10"></textarea>
+    <input id="poupup_submit" type="submit">
+    <label for="poupup_submit" class="def_btn poupup_btn">Перезвоните мне</label>
+  </form>
+</div>
 <footer id="contacts" class="footer wow  animate__animated animate__fadeIn">
   <div class="container">
     <div class="footer-col ">
@@ -778,25 +799,10 @@ animate__fadeIn delay-03">
   </div>
 
 </footer>
-<div class="poupup_wrap">
-  <div class="overley"></div>
-  <form action="" class="form poupup_form animate__animated animate__bounceIn">
-    <div class="poupup_form_close">
-      <span></span>
-    </div>
-    <h4 class="h4 poupup_form_title _def_title">Оставьте ваши данные, <br>
-      мы перезвоним и уточним детали заказа</h4>
-    <h4 class="h4 poupup_form_title _thx_title">Спасибо!</h4>
-    <h4 class="h4 poupup_form_title _download_title">Оставьте ваши данные, <br>
-      мы вышлем вам каталог </h4>
-    <input type="text" name="Имя" id="poupup_name" class="form_input _poupup_input" required placeholder="Имя">
-    <input type="tel" class="telephone phone form_input _poupup_input" name="Телефон" id="poupup_phone" required
-      placeholder="Телефон">
-    <textarea name="Сообщение" id="poupup_msg" class="hide_elem" cols="30" rows="10"></textarea>
-    <input id="poupup_submit" type="submit">
-    <label for="poupup_submit" class="def_btn poupup_btn">Перезвоните мне</label>
-  </form>
-</div>
+
+
+
+
 <script src="js/main.min.js"></script>
 </body>
 

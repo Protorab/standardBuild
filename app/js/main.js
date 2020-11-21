@@ -54,21 +54,28 @@ $(document).ready(function () {
       '<div class="slick-next custom_slick_arrow"><span> </span><span></span></div>',
     prevArrow:
       '<div class="slick-prev custom_slick_arrow"><span> </span><span></span></div>',
-    autoplay: 1,
+    autoplay: false,
     autoplaySpeed: 2000,
     speed: 800,
     responsive: [
       {
-        breakpoint: 800,
+        breakpoint: 1050,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 533,
+        breakpoint: 800,
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
@@ -155,19 +162,44 @@ $(document).ready(function () {
   });
   // show_form
   $(".show_form_btn").click(function (e) {
-    $(".poupup_wrap").fadeIn();
-    $(".overley").fadeIn();
+    $(".form__popup").hide().css("display", "flex").fadeIn();
+
+    // $(".overley").fadeIn();
     $("body").addClass("no-scroll");
     e.preventDefault();
+  });
+  $(".more__info").on("click", function () {
+    let moreImg = $(this)
+        .parents(".product__item")
+        .find(".product__img")
+        .attr("src"),
+      moreTitle = $(this)
+        .parents(".product__item")
+        .find(".product__name")
+        .text(),
+      moreDescreption = $(this)
+        .parents(".product__item")
+        .find(".product__description")
+        .html(),
+      moreList = $(this)
+        .parents(".product__item")
+        .find(".product__features_list")
+        .html();
+    $(".product__more").hide().css("display", "flex").fadeIn();
+    $(".product__more-title").text(moreTitle);
+    $(".product__more-show").attr("data-subject", "Хочу заказать " + moreTitle);
+    $(".product__more-img").attr("title", moreTitle).attr("href", moreImg);
+    $(".product__more-img img").attr("src", moreImg);
+    $(".product__more-descreption").html(moreDescreption);
+    $(".product__more-list").html(moreList);
+    $("body").addClass("no-scroll");
   });
 
   // hide form
   $(".poupup_form_close").click(function (e) {
     $("body").removeClass("no-scroll");
+
     $(".poupup_wrap").fadeOut();
-    $(".poupup_more_wrap").fadeOut();
-    $(".quize_poupup_wrap").fadeOut();
-    $(".overley").fadeOut();
     function show_def() {
       $(".content_step").hide();
       $(".content_step_1").delay(500).show();

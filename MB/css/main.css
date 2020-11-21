@@ -5092,16 +5092,6 @@ section {
   color: #fff;
   margin-bottom: 4rem
 }
-.works_galery img {
-  max-width: 450px;
-  max-height: 370px;
-  width: 100%;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px
-}
 .works_galery_slider {
   margin-bottom: 4rem;
   flex-direction: column;
@@ -5152,6 +5142,29 @@ section {
 }
 .works_galery_slider .custom_slick_arrow:hover {
   opacity: .5
+}
+.works__item {
+  overflow: hidden;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  max-height: 200px;
+  max-width: 450px
+}
+.works__item img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px
 }
 .custom_slick_arrow {
   cursor: pointer;
@@ -5768,12 +5781,10 @@ section {
   border-top: 5px solid #282727;
   border-bottom: 5px solid #282727;
   z-index: 100500;
-  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  margin: auto auto;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -6093,7 +6104,8 @@ section {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   position: fixed;
-  z-index: 110;
+  z-index: 0;
+  cursor: pointer;
   width: 100%;
   height: 100%;
   top: 0;
@@ -6105,6 +6117,8 @@ section {
   display: none;
   position: fixed;
   z-index: 100;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   top: 0;
@@ -6168,11 +6182,9 @@ section {
 .product__label {
   font-weight: 400;
   color: #000;
-  display: inline-flex;
-  width: 179px;
-  padding-top: 15px;
-  padding-bottom: 12px;
-  padding-left: 15px;
+  display: flex;
+  min-width: 200px;
+  padding: 15px;
   transition: ease-in-out .2s;
   -webkit-transition: ease-in-out .2s;
   -moz-transition: ease-in-out .2s;
@@ -6228,6 +6240,13 @@ section {
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px
+}
+.product__description {
+  position: absolute;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  width: 0
 }
 .product__name {
   padding-bottom: 2rem;
@@ -6426,6 +6445,77 @@ input.answere {
   font-size: 0;
   width: 0;
   z-index: -100500
+}
+.product__more {
+  z-index: 1
+}
+.product__more-wrap {
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  width: 100%;
+  background: #f2f2f2;
+  padding: 7.2rem 3.4rem 4rem 2.7rem
+}
+.product__more-wrap .def_btn {
+  max-width: 175px;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.product__more-title {
+  margin-bottom: 2rem
+}
+.product__more-colls {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 3rem
+}
+.product__more-coll {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: start
+}
+.product__more-img {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  display: inline-flex;
+  margin-right: 3rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px
+}
+.product__more-img img {
+  min-width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  height: 100%
+}
+.product__more-descreption {
+  margin-bottom: 3rem
+}
+.product__more-price {
+  font-weight: 700
+}
+.product__more ul {
+  list-style: none
+}
+.product__more ul li {
+  margin-bottom: 1rem
+}
+.product__more ul li:last-child {
+  margin-bottom: 0
+}
+.product__more .product__features_list li.product__price {
+  background: 0 0;
+  color: #000
 }
 @media only screen and (max-width:1680px) {
   .header_slider_slide:before {
@@ -6711,6 +6801,9 @@ input.answere {
     margin-right: 3rem;
     margin-bottom: 0
   }
+  .works__item {
+    max-height: 150px
+  }
   .shipping_points {
     -ms-grid-columns: (100%)[1];
     grid-template-columns: repeat(1,100%)
@@ -6889,6 +6982,9 @@ screen and (max-height:300px) {
   .slide_img {
     width: 100%
   }
+  .works_galery_slider .slick-list {
+    margin-bottom: 5rem
+  }
   .news_grid {
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2,1fr)
@@ -6972,8 +7068,7 @@ screen and (max-height:300px) {
     margin-bottom: 3rem
   }
   .works_galery_slider .slick-dots li {
-    margin-right: .2rem;
-    background: #fff
+    margin-right: .2rem
   }
   .works_galery_slider.slick-dotted.slick-slider {
     margin-bottom: 6rem
