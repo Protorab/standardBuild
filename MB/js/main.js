@@ -14818,7 +14818,17 @@ $(document).ready(function () {
   });
 
   //
+  var worksHeight = 200;
 
+  if ($(window).width() >= 768) {
+    $(".works__item").each(function () {
+      if ($(this).height() < worksHeight) {
+        worksHeight = $(this).height();
+      }
+    });
+
+    $(".works__item").height(worksHeight);
+  }
   //паралакс при ховере
   $(window).mousemove(function (e) {
     var item = $(".questions_img");

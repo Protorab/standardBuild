@@ -482,7 +482,7 @@ footer,
     display: flex;
   }
 
-  @media only screen and (max-width : 375px) {
+  @media only screen and (max-width : 600px) {
     width: 3.5rem;
     height: 3.5rem;
   }
@@ -560,12 +560,44 @@ footer,
   }
 }
 
+.call__mobile {
+  display: none;
+
+  @media only screen and (max-width : 600px) {
+    display: inline-block;
+  }
+
+}
+
+.call__desktop {
+  @media only screen and (max-width : 600px) {
+    display: none;
+
+  }
+
+}
+
 .phones {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   @include _transition(.3s);
+
+  &.mobile {
+    display: none;
+  }
+
+  @media only screen and (max-width : 600px) {
+    &.desktop {
+      display: none;
+    }
+
+    &.mobile {
+      display: flex;
+      margin-bottom: 2rem;
+    }
+  }
 
   a {
     @include _transition(.3s);
@@ -948,6 +980,11 @@ footer,
 
     @media only screen and (max-width : 800px) {
       padding: 3rem;
+      max-width: 90%;
+      align-self: center;
+      justify-self: center;
+      margin: 0;
+
     }
 
     @media only screen and (max-width : 568px) {
@@ -3223,12 +3260,16 @@ footer,
 }
 
 .aside {
+  @media only screen and (max-width : 1024px) {
+    position: sticky;
+    top: 0;
+  }
 
   @media only screen and (max-width : 568px) {
     display: none;
-    position: sticky;
+    position: relative;
     top: 0;
-    position: -webkit-sticky;
+
     z-index: 5;
   }
 }
@@ -3282,9 +3323,14 @@ footer,
 
   @include _border_radius(5px);
 
+  @media only screen and (max-width : 600px) {
+    min-width: 170px;
+    width: 48%;
+  }
+
   @media only screen and (max-width : 375px) {
     padding: 1rem;
-    width: 48%;
+
   }
 }
 
@@ -3450,7 +3496,7 @@ footer,
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   display: none;
-  z-index: 2;
+  z-index: 1;
 
   @media only screen and (max-width : 568px) {
     display: flex;
@@ -3633,6 +3679,11 @@ input {
     align-items: flex-start;
     justify-content: flex-start;
     margin-bottom: 3rem;
+
+    @media only screen and (max-width : 600px) {
+      flex-direction: column;
+    }
+
   }
 
   &-coll {
@@ -3666,10 +3717,15 @@ input {
     font-weight: bold;
   }
 
+  &-list {
+    margin-top: 3rem;
+  }
+
   ul {
     list-style: none;
 
     li {
+      display: flex;
       margin-bottom: 1rem;
 
       &:last-child {
