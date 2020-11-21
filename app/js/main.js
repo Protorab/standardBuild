@@ -265,6 +265,7 @@ $(document).ready(function () {
       }
     });
 
+    $(".works__item").css("min-height", worksHeight + "px");
     $(".works__item").height(worksHeight);
   }
   //паралакс при ховере

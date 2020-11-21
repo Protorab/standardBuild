@@ -3552,8 +3552,7 @@ img.mfp-img {
   font-family: slick;
   font-weight: 400;
   font-style: normal;
-  src: url(/fonts/plugins/slick/slick.eot);
-  src: url(/fonts/plugins/slick/slick.eot?#iefix) format("embedded-opentype"),url(/fonts/plugins/slick/slick.woff) format("woff"),url(/fonts/plugins/slick/fonts/slick.ttf) format("truetype"),url(/fonts/plugins/slick/fonts/slick.svg#slick) format("svg")
+  src: url(/fonts/plugins/slick/slick.woff) format("woff")
 }
 .slick-next,
 .slick-prev {
@@ -5156,7 +5155,7 @@ section {
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
-  max-height: 200px;
+  min-height: 200px;
   max-width: 450px
 }
 .works__item img {

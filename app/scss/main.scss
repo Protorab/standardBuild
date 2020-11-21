@@ -1810,7 +1810,7 @@ footer,
 .works__item {
   overflow: hidden;
   @include _border_radius(5px);
-  max-height: 200px;
+  min-height: 200px;
   max-width: 450px;
 
   img {
