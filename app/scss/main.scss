@@ -417,7 +417,7 @@ footer,
   position: relative;
   z-index: 99;
   display: flex;
-  flex-direction: column;
+    flex-direction: column;
   align-items: center;
   justify-content: space-around;
   width: 4.5rem;
@@ -832,10 +832,17 @@ footer,
         background: #4066c4;
       }
     }
+@media only screen and (max-width : 1680px) {
+      right: 40rem;
+}
 
     @media only screen and (max-width : 1600px) {
       right: 35rem;
     }
+@media only screen and (max-width : 1369px) {
+      right: 32rem;
+
+}
 
     @media only screen and (max-width : 1280px) {
       bottom: 20rem;
@@ -1593,6 +1600,10 @@ footer,
   @media only screen and (max-width : 1600px) {
     max-height: 210px;
   }
+@media only screen and (max-width : 800px) {
+    max-height: 150px;
+
+}
 
   @include _border_radius(5px);
 }
@@ -1762,8 +1773,6 @@ footer,
   .slick-dots {
     // margin-top: 3rem;
     display: flex;
-
-
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -2227,6 +2236,11 @@ footer,
   &._gray {
     border-top: 70px solid #F2F2F2;
     right: -3rem;
+@media only screen and (max-width : 1024px) {
+    right: -3.1rem;
+
+}
+
   }
 }
 
@@ -2243,6 +2257,10 @@ footer,
   &._gray {
     border-bottom: 70px solid #F2F2F2;
     right: -3rem;
+    @media only screen and (max-width : 1024px) {
+    right: -3.1rem;
+
+}
   }
 }
 

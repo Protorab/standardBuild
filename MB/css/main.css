@@ -6534,6 +6534,9 @@ input.answere {
   color: #000
 }
 @media only screen and (max-width:1680px) {
+  .header_section .slick-dots {
+    right: 40rem
+  }
   .header_slider_slide:before {
     height: 85%
   }
@@ -6652,6 +6655,9 @@ input.answere {
 @media only screen and (max-width:1369px) {
   .container {
     max-width: 95%
+  }
+  .header_section .slick-dots {
+    right: 32rem
   }
 }
 @media only screen and (max-width:1368px) {
@@ -6855,6 +6861,12 @@ input.answere {
   .steps_grid_item:nth-child(4) ._gray {
     display: block
   }
+  ._top_triangle._gray {
+    right: -3.1rem
+  }
+  ._bottom_triangle._gray {
+    right: -3.1rem
+  }
   .payments_grid {
     -ms-grid-columns: (1fr)[1];
     grid-template-columns: repeat(1,1fr)
@@ -7008,6 +7020,9 @@ screen and (max-height:300px) {
   }
   .slide_img {
     width: 100%
+  }
+  .services_item {
+    max-height: 150px
   }
   .works_galery_slider .slick-list {
     margin-bottom: 5rem
