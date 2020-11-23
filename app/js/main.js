@@ -12,7 +12,7 @@ $(document).ready(function () {
     infinite: true,
     dots: true,
     asNavFor: null,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 2000,
     easing: "ease-in-out",
     speed: 1800,
@@ -54,7 +54,7 @@ $(document).ready(function () {
       '<div class="slick-next custom_slick_arrow"><span> </span><span></span></div>',
     prevArrow:
       '<div class="slick-prev custom_slick_arrow"><span> </span><span></span></div>',
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 2000,
     speed: 800,
     responsive: [

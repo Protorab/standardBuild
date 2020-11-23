@@ -515,10 +515,13 @@ footer,
 .logo {
   width: 6rem;
   height: 6.6rem;
+  display: flex;
+  align-items: center;
 
   img {
     width: 100%;
     height: auto;
+     
   }
 
   @include _transition(.2s);
@@ -3591,6 +3594,12 @@ footer,
   bottom: 0;
   background: #282727;
   z-index: 100500;
+
+  img {
+    max-width: 100px;
+    width: 100%;
+    height: auto;
+  }
 }
 
 .advantages_item {

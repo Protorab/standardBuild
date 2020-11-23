@@ -35,5 +35,8 @@
     "gulp-webp-css": "^1.1.0",
     "gulp-webp-html": "^1.0.2",
     "webp-converter": "^2.2.3"
+  },
+  "dependencies": {
+    "loading-attribute-polyfill": "^1.5.4"
   }
 }
