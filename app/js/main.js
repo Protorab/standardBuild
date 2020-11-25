@@ -172,13 +172,13 @@ $(document).ready(function () {
   $(".more__info").on("click", function () {
     let moreImg = $(this)
         .parents(".product__item")
-        .find(".product__img")
+        .find(".product__img img")
         .attr("src"),
       moreTitle = $(this)
         .parents(".product__item")
         .find(".product__name")
         .text(),
-      moreDescreption = $(this)
+      moreDescription = $(this)
         .parents(".product__item")
         .find(".product__description")
         .html(),
@@ -191,7 +191,7 @@ $(document).ready(function () {
     $(".product__more-show").attr("data-subject", "Хочу заказать " + moreTitle);
     $(".product__more-img").attr("title", moreTitle).attr("href", moreImg);
     $(".product__more-img img").attr("src", moreImg);
-    $(".product__more-descreption").html(moreDescreption);
+    $(".product__more-descreption").html(moreDescription);
     $(".product__more-list").html(moreList);
     $("body").addClass("no-scroll");
   });
@@ -249,6 +249,7 @@ $(document).ready(function () {
   // переключенире между товарами
   $(".product__label").click(function (e) {
     var _id = $(this).data("id");
+    $(".product__menu").click();
     $(".product__label").removeClass("_clicked");
     $(this).addClass("_clicked");
     $(".products").removeClass("_open");
