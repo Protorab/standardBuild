@@ -4223,7 +4223,7 @@ label,
 li,
 p,
 pre {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   line-height: 120%
 }
 .w-100 {
@@ -4819,7 +4819,7 @@ section {
   height: auto
 }
 .def_btn {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #fff;
   padding: 1.5rem 6.9rem;
@@ -7166,7 +7166,7 @@ screen and (max-height:300px) {
   li,
   p,
   pre {
-    font-size: 1.2rem
+    font-size: 1.4rem
   }
   ._m_menu li a {
     font-size: 1.5rem

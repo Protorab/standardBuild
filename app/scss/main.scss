@@ -220,7 +220,7 @@ label,
 pre,
 .form_input {
 
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   line-height: 120%;
 
   @media only screen and (max-width : 768px) {
@@ -229,7 +229,7 @@ pre,
   }
 
   @media only screen and (max-width : 568px) {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 
   }
 
@@ -417,7 +417,7 @@ footer,
   position: relative;
   z-index: 99;
   display: flex;
-    flex-direction: column;
+  flex-direction: column;
   align-items: center;
   justify-content: space-around;
   width: 4.5rem;
@@ -521,7 +521,7 @@ footer,
   img {
     width: 100%;
     height: auto;
-     
+
   }
 
   @include _transition(.2s);
@@ -832,17 +832,19 @@ footer,
         background: #4066c4;
       }
     }
-@media only screen and (max-width : 1680px) {
+
+    @media only screen and (max-width : 1680px) {
       right: 40rem;
-}
+    }
 
     @media only screen and (max-width : 1600px) {
       right: 35rem;
     }
-@media only screen and (max-width : 1369px) {
+
+    @media only screen and (max-width : 1369px) {
       right: 32rem;
 
-}
+    }
 
     @media only screen and (max-width : 1280px) {
       bottom: 20rem;
@@ -1268,7 +1270,7 @@ footer,
 }
 
 .def_btn {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #FFFFFF;
   padding: 1.5rem 6.9rem;
@@ -1600,10 +1602,11 @@ footer,
   @media only screen and (max-width : 1600px) {
     max-height: 210px;
   }
-@media only screen and (max-width : 800px) {
+
+  @media only screen and (max-width : 800px) {
     max-height: 150px;
 
-}
+  }
 
   @include _border_radius(5px);
 }
@@ -2236,10 +2239,11 @@ footer,
   &._gray {
     border-top: 70px solid #F2F2F2;
     right: -3rem;
-@media only screen and (max-width : 1024px) {
-    right: -3.1rem;
 
-}
+    @media only screen and (max-width : 1024px) {
+      right: -3.1rem;
+
+    }
 
   }
 }
@@ -2257,10 +2261,11 @@ footer,
   &._gray {
     border-bottom: 70px solid #F2F2F2;
     right: -3rem;
-    @media only screen and (max-width : 1024px) {
-    right: -3.1rem;
 
-}
+    @media only screen and (max-width : 1024px) {
+      right: -3.1rem;
+
+    }
   }
 }
 
