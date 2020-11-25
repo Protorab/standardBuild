@@ -5,14 +5,14 @@
 $(document).ready(function () {
   // wow.js
   new WOW().init();
-
+  const autoplaySwitch = false; //true
   // header_slider
   var header_slider = ".header_slider";
   $(header_slider).slick({
     infinite: true,
     dots: true,
     asNavFor: null,
-    autoplay: true,
+    autoplay: autoplaySwitch,
     autoplaySpeed: 2000,
     easing: "ease-in-out",
     speed: 1800,
@@ -54,22 +54,23 @@ $(document).ready(function () {
       '<div class="slick-next custom_slick_arrow"><span> </span><span></span></div>',
     prevArrow:
       '<div class="slick-prev custom_slick_arrow"><span> </span><span></span></div>',
-    autoplay: true,
+    autoplay: autoplaySwitch,
     autoplaySpeed: 2000,
     speed: 800,
     responsive: [
       {
         breakpoint: 1050,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 800,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
+          arrows: false,
         },
       },
       {
