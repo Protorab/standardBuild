@@ -1,3 +1,5 @@
+/** @format */
+
 // FOLDERS
 const distFolder = require("path").basename(__dirname); //project folder name
 const appFolder = "app"; //work folder name
