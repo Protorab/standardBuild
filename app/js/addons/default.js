@@ -28,7 +28,7 @@ $(document).ready(function () {
     return false;
   });
   //not submit on enter keydown
-  $("form").keydown(function () {
+  $("form").keydown(function (e) {
     if (e.keyCode == 13) {
       e.preventDefault();
     }

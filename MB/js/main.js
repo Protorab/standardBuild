@@ -14804,7 +14804,7 @@ $(document).ready(function () {
     return false;
   });
   //not submit on enter keydown
-  $("form").keydown(function () {
+  $("form").keydown(function (e) {
     if (e.keyCode == 13) {
       e.preventDefault();
     }
@@ -14833,7 +14833,7 @@ testWebP(function (support) {
 $(document).ready(function () {
   // wow.js
   new WOW().init();
-  const autoplaySwitch = false; //true
+  const autoplaySwitch = true; // false
   // header_slider
   var header_slider = ".header_slider";
   $(header_slider).slick({
@@ -15077,7 +15077,10 @@ $(document).ready(function () {
   // переключенире между товарами
   $(".product__label").click(function (e) {
     var _id = $(this).data("id");
-    $(".product__menu").click();
+    if ($(window).width() <= 600) {
+      $(".product__menu").click();
+    }
+
     $(".product__label").removeClass("_clicked");
     $(this).addClass("_clicked");
     $(".products").removeClass("_open");
@@ -15111,6 +15114,22 @@ $(document).ready(function () {
       });
     }
   });
+});
+
+function readURL(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      $("#previewImg").attr("src", e.target.result);
+    };
+
+    reader.readAsDataURL(input.files[0]); // convert to base64 string
+  }
+}
+
+$("#photo").change(function () {
+  readURL(this);
 });
 document.addEventListener("DOMContentLoaded", () => {
   // Custom JS

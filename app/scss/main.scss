@@ -134,7 +134,7 @@ h,
 
   &4 {
     // font-family: 'Roboto Slab';
-    font-size: 1.6rem;
+    font-size: 2rem;
     line-height: 130%;
     font-weight: 700;
     position: relative;
@@ -952,7 +952,7 @@ footer,
   right: 16rem;
   z-index: 5;
   position: absolute;
-  width: 780px;
+  width: 650px;
   background: rgba(255, 255, 255, .5);
   backdrop-filter: blur(10px);
 
@@ -998,9 +998,10 @@ footer,
 
   @media only screen and (max-width : 1280px) {
     top: 6rem;
-    width: 650px;
+    width: 450px;
+
     padding: 2.3rem 4.2rem 2.3rem 10.3rem;
-    min-height: 200px;
+    min-height: 230px;
   }
 
   @media only screen and (max-width : 1024px) {
@@ -1058,14 +1059,25 @@ footer,
     }
 
     opacity: 1;
-    background: rgba(0, 0, 254, 0.5);
+    background: rgba(255, 255, 255, 0.5);
+
     @include _border_radius(5px);
+
+    @media only screen and (max-width : 1680px) {
+      width: 70rem;
+
+    }
+
+    @media only screen and (max-width : 1440px) {
+      right: 4rem;
+
+    }
 
     @media only screen and (max-width : 1024px) {
       position: static;
       margin-right: 2rem;
       width: auto;
-      max-width: 70%;
+      max-width: 50%;
       align-self: flex-end;
     }
 
@@ -1129,6 +1141,18 @@ footer,
     }
   }
 
+  @media only screen and (max-width : 1680px) {
+    grid-template-columns: repeat(2, 1fr);
+
+    margin-bottom: 2rem;
+
+  }
+
+  @media only screen and (max-width : 1024px) {
+    grid-template-columns: repeat(1, 100%);
+
+  }
+
   @media only screen and (max-width : 800px) {
     grid-gap: 1.5rem 1rem;
     padding-left: 1.5rem;
@@ -1150,7 +1174,7 @@ footer,
     right: 16rem;
     z-index: 0;
     position: absolute;
-    bottom: 20.5rem;
+    bottom: 21rem;
     width: 0rem;
     height: 2px;
     content: "";
@@ -1269,8 +1293,10 @@ footer,
     overflow: hidden;
 
     img {
+      object-fit: cover;
+      object-position: center;
       width: 100%;
-      height: auto;
+      height: 100%;
     }
 
     @media only screen and (max-width : 1024px) {
@@ -1447,7 +1473,7 @@ footer,
   }
 
   p {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   @media only screen and (max-width : 1440px) {
@@ -1979,6 +2005,7 @@ footer,
 
   @media only screen and (max-width : 800px) {
     height: 300px;
+    max-width: 100%;
 
   }
 
@@ -3022,6 +3049,8 @@ footer,
       -o-transform: scale(0);
     }
   }
+
+  &:last-child {}
 }
 
 .no-scroll {
@@ -3522,7 +3551,7 @@ footer,
   display: grid;
   width: 100%;
   height: 100%;
-  grid-template-columns: repeat(auto-fill, minmax(225px, 32%));
+  grid-template-columns: repeat(auto-fill, minmax(225px, 49%));
   grid-gap: 4rem 2rem;
   justify-content: space-between;
 
@@ -3551,7 +3580,7 @@ footer,
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
   @include _border_radius(5px);
 
-  @media only screen and (max-width :600px) {
+  @media only screen and (max-width : 800px) {
     padding: 2rem;
   }
 }
@@ -3578,25 +3607,35 @@ footer,
   display: flex;
   width: 100%;
 
-  @media only screen and (max-width : 600px) {
+  @media only screen and (max-width : 800px) {
     flex-direction: column;
 
     .def_btn {
       margin-bottom: 2rem;
+      padding-left: 0;
+      padding-right: 0;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      width: 100%;
     }
   }
 }
 
 .product__img {
   width: 270px;
+  min-width: 270px;
+
   height: 245px;
   overflow: hidden;
   display: flex;
 
 
   img {
-    width: 100%;
-    height: 100%;
+    width: 103%;
+    height: 103%;
+    position: relative;
+    top: -1%;
     object-fit: cover;
     object-position: center;
   }
@@ -3604,7 +3643,7 @@ footer,
   @include _border_radius(5px 0 5px 5px);
 
 
-  @media only screen and (max-width : 600px) {
+  @media only screen and (max-width : 800px) {
     width: 100%;
     margin-bottom: 2rem;
     @include _border_radius(5px);
@@ -3622,7 +3661,7 @@ footer,
   display: flex;
   margin-bottom: 25px;
 
-  @media only screen and (max-width : 600px) {
+  @media only screen and (max-width : 800px) {
     flex-direction: column;
     align-items: center;
   }
@@ -3863,10 +3902,12 @@ input {
     padding: 7.2rem 3.4rem 4rem 2.7rem;
 
     .def_btn {
-      max-width: 175px;
+      max-width: 330px;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 
@@ -3900,8 +3941,8 @@ input {
   }
 
   &-img {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     overflow: hidden;
     display: inline-flex;
     margin-right: 3rem;
@@ -3931,7 +3972,7 @@ input {
   }
 
   &-list {
-    margin-top: 3rem;
+    margin-top: 4rem;
   }
 
   ul {
@@ -3951,4 +3992,97 @@ input {
     background: none;
     color: #000;
   }
+}
+
+.calculate__section {
+  @extend .about_us_section;
+
+  .calculate__container {
+    align-items: flex-start;
+
+    @media only screen and (max-width : 1024px) {
+      grid-gap: 2rem;
+    }
+
+  }
+}
+
+
+
+.calculate__col {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+
+
+  p {
+    margin-bottom: 2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.form__calculation {
+  width: 100%;
+  background: #f2f2f2;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .05);
+  padding: 6rem 3rem 3rem;
+  @include _border_radius(5px 5px 0 0px);
+}
+
+.custom__file {
+  width: 80%;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid #282727;
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: flex;
+  cursor: pointer;
+
+  &-img {
+    width: 50px;
+    height: 50px;
+    @include _border_radius(5px);
+    overflow: hidden;
+    position: relative;
+  }
+
+  &-label {
+    font-weight: bold;
+    @extend .p;
+  }
+
+  &-input {
+    width: 1%;
+
+    position: absolute;
+    opacity: 0;
+    bottom: 0;
+    right: 15%;
+    z-index: -1;
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    min-width: 100%;
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: translate(50%, -50%);
+  }
+
+  @media only screen and (max-width : 600px) {
+    width: 90%;
+  }
+
 }
