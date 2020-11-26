@@ -286,6 +286,19 @@ $(document).ready(function () {
       });
     }
   });
+  let findForm =
+      "<span class='find__form'><form action=''><input placeholder='Поиск' required type='text' class='find__form-input'><input id='find__form-submit' type='submit' value=''><label class='find__form-label' for='find__form-submit'>Найти</label></form><span class='find__form-icon'><img src='img/icon/icon__search.svg'alt=''></ы></span></span>",
+    findFormMobile =
+      "<span class='find__form'><form action=''><input placeholder='Поиск' required type='text' class='find__form-input'><input id='find__form-submit' type='submit' value=''><label class='find__form-label' for='find__form-submit'>Найти</label></form><span class='find__form-icon'><img src='img/icon/icon__search-mobile.svg'alt=''></ы></span></span>";
+  if ($(window).width() >= 1100) {
+    $(findForm).appendTo($(".header__container"));
+  } else {
+    $(findFormMobile).appendTo($("._m_menu"));
+  }
+
+  $(".find__form-icon").on("click", function () {
+    $(".find__form").toggleClass("__show");
+  });
 });
 
 function readURL(input) {
