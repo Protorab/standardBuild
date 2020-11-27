@@ -24,6 +24,7 @@
       src="https://api-maps.yandex.ru/2.1/?apikey=c0f6f5c0-aaee-4a96-ad79-ebd980c3424d&lang=ru_RU&scroll=false&mode=release"
       type="text/javascript">
     </script>
+    <script src="https://kit.fontawesome.com/e272fd0660.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="css/main.min.css">
     <title>Корпусная, встроенная мебель под заказ в Минске, купить мебель на заказ</title>
@@ -37,8 +38,7 @@
 
   <body>
 
-
-    <header class="header">
+    <header class="header" id="header">
       <div class="header__container container">
         <a href="index.html#" class="logo">
           <img src="img/logo.gif" loading="lazy" alt="logo" title="">
@@ -57,11 +57,31 @@
         </nav>
         <div class="wrap">
           <div class="phones desktop">
-            <a class="h4" href="tel:+375 (29) 173-77-77">+375 (29) 173-77-77</a>
-            <a class="viber viber__desktop" href="viber://chat?number=+375 (29) 173-77-77"><img
-                src="img/icon/social/viber.png" alt=""></a>
-            <a class="viber viber__mobile" href="viber://add?number=375 (29) 173-77-77"><img
-                src="img/icon/social/viber.png" alt=""></a>
+            <a class="h4 phone__desktop" href="tel:+375 (29) 173-77-77">+375 (29) 173-77-77 </a>
+            <a class="h4 icon phone__mob" href="tel:+375 (29) 173-77-77">
+              <img src="img/icon/icon__phone.svg" alt="">
+            </a>
+            <a class="icon viber viber__desktop" href="viber://chat?number=+375 (29) 173-77-77">
+              <img src="img/icon/social/viber.png" alt="">
+            </a>
+            <a class="icon icon__mobile viber viber__mobile" href="viber://add?number=375 (29) 173-77-77">
+              <img src="img/icon/social/viber.png" alt="">
+            </a>
+            <a class="icon icon__mobile icon__location" target="_blank"
+              href="https://yandex.by/maps/157/minsk/?ll=27.503917%2C53.816686&mode=routes&rtext=~53.816352%2C27.503251&rtt=mt&ruri=~&z=17">
+              <img src="img/icon/icon__location.svg" alt="">
+            </a>
+            <a href="#header" class="find__form-icon">
+              <img src="img/icon/icon__search.svg" alt="">
+            </a>
+            <span class="find__form">
+              <form action="">
+                <input placeholder="Поиск" required type="text" class="find__form-input">
+                <input id="find__form-submit" type="submit" value="">
+                <label class="find__form-label" for="find__form-submit">Найти</label>
+              </form>
+            </span>
+
           </div>
           <a data-subject="Перезвоните мне" href="#form" class="show_form_btn call__desktop ">Перезвоните мне</a>
         </div>
@@ -77,7 +97,7 @@
           <li><a href="index.html#contacts">Контакты</a></li>
 
           <div class="phones mobile">
-            <a class="h4" href="tel:+375 (29) 173-77-77">+375 (29) 173-77-77</a>
+            <a class="h4" href="tel:+375 (29) 173-77-77">+375 (29) 173-77-77 </a>
           </div>
           <a data-subject="Перезвоните мне" href="#form" class="show_form_btn call__mobile">Перезвоните мне</a>
 
@@ -87,16 +107,6 @@
           <div class="bar bar_2"></div>
           <div class="bar bar_3"></div>
         </div>
-        <!-- <span class="find__form">
-          <form action="">
-            <input placeholder="Поиск" required type="text" class="find__form-input">
-            <input id="find__form-submit" type="submit" value="">
-            <label class="find__form-label" for="find__form-submit">Найти</label>
-          </form>
-          <span class="find__form-icon">
-            <img src="img/icon/icon__search.svg" alt="">
-            </ы>
-          </span>
-        </span> -->
+
       </div>
     </header>

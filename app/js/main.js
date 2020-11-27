@@ -5,7 +5,7 @@
 $(document).ready(function () {
   // wow.js
   new WOW().init();
-  const autoplaySwitch = true; // false
+  const autoplaySwitch = false; // true
   // header_slider
   var header_slider = ".header_slider";
   $(header_slider).slick({
@@ -19,7 +19,7 @@ $(document).ready(function () {
   });
 
   // галлерея
-  $(".works_galery").magnificPopup({
+  $(".works__galery").magnificPopup({
     delegate: "a",
     type: "image",
     tLoading: "Загрузка изображения #%curr%...",
@@ -39,7 +39,7 @@ $(document).ready(function () {
   });
 
   // салайдер из галлереи
-  $(".works_galery_slider").slick({
+  $(".works__slider").slick({
     dots: true,
     infinite: true,
 
@@ -286,15 +286,15 @@ $(document).ready(function () {
       });
     }
   });
-  let findForm =
-      "<span class='find__form'><form action=''><input placeholder='Поиск' required type='text' class='find__form-input'><input id='find__form-submit' type='submit' value=''><label class='find__form-label' for='find__form-submit'>Найти</label></form><span class='find__form-icon'><img src='img/icon/icon__search.svg'alt=''></ы></span></span>",
-    findFormMobile =
-      "<span class='find__form'><form action=''><input placeholder='Поиск' required type='text' class='find__form-input'><input id='find__form-submit' type='submit' value=''><label class='find__form-label' for='find__form-submit'>Найти</label></form><span class='find__form-icon'><img src='img/icon/icon__search-mobile.svg'alt=''></ы></span></span>";
-  if ($(window).width() >= 1100) {
-    $(findForm).appendTo($(".header__container"));
-  } else {
-    $(findFormMobile).appendTo($("._m_menu"));
-  }
+  // let findForm =
+  //     "<span class='find__form'><form action=''><input placeholder='Поиск' required type='text' class='find__form-input'><input id='find__form-submit' type='submit' value=''><label class='find__form-label' for='find__form-submit'>Найти</label></form><span class='find__form-icon'><img src='img/icon/icon__search.svg'alt=''></ы></span></span>",
+  //   findFormMobile =
+  //     "<span class='find__form'><form action=''><input placeholder='Поиск' required type='text' class='find__form-input'><input id='find__form-submit' type='submit' value=''><label class='find__form-label' for='find__form-submit'>Найти</label></form><span class='find__form-icon'><img src='img/icon/icon__search-mobile.svg'alt=''></ы></span></span>";
+  // if ($(window).width() >= 1100) {
+  //   $(findForm).appendTo($(".header__container"));
+  // } else {
+  //   $(findFormMobile).appendTo($("._m_menu"));
+  // }
 
   $(".find__form-icon").on("click", function () {
     $(".find__form").toggleClass("__show");

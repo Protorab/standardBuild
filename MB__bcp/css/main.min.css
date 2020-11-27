@@ -6181,29 +6181,29 @@ section {
   margin-bottom: 4rem
 }
 
-.works_galery_slider {
+.works__slider {
   margin-bottom: 4rem;
   flex-direction: column;
   align-items: center;
   justify-content: center
 }
 
-.works_galery_slider .slick-slide {
+.works__slider .slick-slide {
   margin: 0 20px
 }
 
-.works_galery_slider .slick-list {
+.works__slider .slick-list {
   width: 90%;
   margin-bottom: 3rem
 }
 
-.works_galery_slider .slick-arrow {
+.works__slider .slick-arrow {
   position: absolute;
   top: 8rem;
   z-index: 0
 }
 
-.works_galery_slider .slick-arrow.slick-prev {
+.works__slider .slick-arrow.slick-prev {
   left: 0;
   transform: translate(0);
   -webkit-transform: translate(0);
@@ -6212,15 +6212,15 @@ section {
   -o-transform: translate(0)
 }
 
-.works_galery_slider .slick-arrow.slick-next {
+.works__slider .slick-arrow.slick-next {
   right: 0
 }
 
-.works_galery_slider .slick-arrow:before {
+.works__slider .slick-arrow:before {
   display: none
 }
 
-.works_galery_slider .slick-dots {
+.works__slider .slick-dots {
   display: flex;
   left: 0;
   right: 0;
@@ -6232,21 +6232,21 @@ section {
   position: static
 }
 
-.works_galery_slider .slick-dots li {
+.works__slider .slick-dots li {
   background: #0000fe;
   border: 2px solid transparent
 }
 
-.works_galery_slider .slick-dots li.slick-active {
+.works__slider .slick-dots li.slick-active {
   border-color: #0000fe;
   background: #fff
 }
 
-.works_galery_slider .slick-dots li:last-child {
+.works__slider .slick-dots li:last-child {
   margin-right: 0
 }
 
-.works_galery_slider .custom_slick_arrow:hover {
+.works__slider .custom_slick_arrow:hover {
   opacity: .5
 }
 
@@ -8665,12 +8665,12 @@ screen and (max-height:300px) {
     width: 100%
   }
 
-  .works_galery_slider .slick-list {
+  .works__slider .slick-list {
     width: 100%;
     margin-bottom: 5rem
   }
 
-  .works_galery_slider .custom_slick_arrow {
+  .works__slider .custom_slick_arrow {
     display: none !important
   }
 
@@ -8952,7 +8952,7 @@ screen and (max-height:300px) {
     margin-bottom: 3rem
   }
 
-  .works_galery_slider.slick-dotted.slick-slider {
+  .works__slider.slick-dotted.slick-slider {
     margin-bottom: 6rem
   }
 
