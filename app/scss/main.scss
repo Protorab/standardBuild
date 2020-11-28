@@ -1,19 +1,24 @@
 @import 'config';
 
 // CUSTOM USER STYLES & IMPORTS
-$mainBg: url("../img/main__bg_2.jpg") no-repeat center / cover;
-$mainBgM: url("../img/main__bg_2.jpg") repeat center / contain;
+$mainBg: url("../img/main__bg_5.jpg") no-repeat top center / cover;
+$mainBgM: url("../img/main__bg_5.jpg") repeat top center / contain;
 
 // $mainBgBtn: #282727;
 // $mainBgBtnHover: #4d4c4c;
-
 $mainBgBtn: #892706;
 $mainBgBtnHover: #88716a;
 
-$mainBgA:#28272795;
-$subMainBg: #282727;
-$subMainBgAct:#171918;
-$mainTextColor: #282727;
+
+$mainBgA:#f4f1de91;
+$subMainBg: #F4F1DE;
+$subMainBgAct:#B7B5AB;
+$mainTextColor: #414141;
+
+body {
+  background: $subMainBg;
+
+}
 
 .container {
   margin: 0 auto;
@@ -456,7 +461,9 @@ footer,
   display: none;
 
   &.__change {
-    .bar {}
+    .bar {
+      background: #fff;
+    }
 
     .bar_1 {
       transform: rotate(-45deg) translate(-12px, 10px);
@@ -523,15 +530,13 @@ footer,
 
 .bar {
   width: 90%;
-  height: .35rem;
+  height: 4px;
+  min-height: 4px;
+
   // background: $mainBgBtn;
-  background: #fff;
+  background: $mainBgBtn;
   @include _transition(.2s);
-  border-radius: .5rem;
-  -webkit-border-radius: .5rem;
-  -moz-border-radius: .5rem;
-  -ms-border-radius: .5rem;
-  -o-border-radius: .5rem;
+  @include _border_radius(5px);
 }
 
 
@@ -539,7 +544,7 @@ footer,
   position: sticky;
   top: 0;
   z-index: 8;
-  color: #ffff;
+
   background: $subMainBg;
   padding: 1rem 0;
 
@@ -598,7 +603,7 @@ footer,
     &:nth-child(1) {
       padding-bottom: 0.5rem;
       margin-bottom: .5rem;
-      border-bottom: 1px solid #fff;
+      border-bottom: 1px solid$mainTextColor;
 
       @media only screen and (max-width : 1100px) {
         border-color: transparent;
@@ -649,9 +654,15 @@ footer,
     }
 
     @media only screen and (max-width : 600px) {
-      width: 100%;
-      margin-bottom: 1rem;
-      margin-right: 0;
+      width: 60%;
+      // margin-bottom: 1rem;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    @media only screen and (max-width : 320px) {
+      width: 70%;
+
     }
 
   }
@@ -659,11 +670,26 @@ footer,
 
 .menu {
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(8, minmax(min-content, max-content));
-  grid-gap: 5rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+
   text-transform: uppercase;
 
+  li {
+    display: flex;
+    padding: .5rem 1rem;
+    position: relative;
+    border-left: 1px solid $mainTextColor;
+
+    &:last-child {
+      border-right: 1px solid $mainTextColor;
+
+    }
+
+
+  }
 
   * {
     @include _transition(.3s);
@@ -671,6 +697,7 @@ footer,
 
   a {
     font-size: 1.8rem;
+    font-weight: bold;
   }
 
   a:hover {
@@ -679,13 +706,9 @@ footer,
     // color: #4066c4;
   }
 
-  @media only screen and (max-width : 1440px) {
-    grid-gap: 3rem;
-  }
+  @media only screen and (max-width : 1440px) {}
 
-  @media only screen and (max-width : 1280px) {
-    grid-gap: 2rem;
-  }
+  @media only screen and (max-width : 1280px) {}
 
   @media only screen and (max-width : 1100px) {
     display: none;
@@ -694,6 +717,7 @@ footer,
 
 .call__mobile {
   display: none;
+  text-transform: uppercase;
 
   @media only screen and (max-width : 1100px) {
     display: inline-block;
@@ -703,6 +727,8 @@ footer,
 }
 
 .call__desktop {
+  text-transform: uppercase;
+
   @include _transition(.3s);
   position: relative;
 
@@ -934,6 +960,11 @@ nav {
     padding-top: 0;
     padding-bottom: 0;
   }
+
+}
+
+.section__title {
+  text-transform: uppercase;
 }
 
 .social__icons {
@@ -960,10 +991,11 @@ nav {
     height: 50px;
     align-items: center;
     justify-content: center;
-    background: $mainBgA;
+    background: $subMainBgAct;
+    backdrop-filter: blur(10px);
 
     i {
-      color: $subMainBgAct;
+      color: $mainBgBtn;
     }
 
     &:last-child {
@@ -1173,7 +1205,7 @@ nav {
     bottom: 0;
     background: $mainBg;
     left: 0;
-    opacity: .7;
+    opacity: .9;
 
     @media only screen and (max-width : 600px) {
       background: $mainBgM;
@@ -1198,9 +1230,9 @@ nav {
     bottom: 0;
     background: $mainBg;
     left: 0;
-    opacity: .7;
+    opacity: .9;
 
-    @media only screen and (max-width : 600px) {
+    @media only screen and (max-width : 1100px) {
       background: $mainBgM;
 
     }
@@ -1237,7 +1269,7 @@ nav {
     bottom: 0;
     background: $mainBg;
     left: 0;
-    opacity: .7;
+    opacity: .9;
 
     @media only screen and (max-width : 600px) {
       background: $mainBgM;
@@ -1631,7 +1663,8 @@ nav {
 
   img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    position: absolute;
     object-position: center;
     object-fit: cover;
   }
@@ -1740,6 +1773,7 @@ nav {
 }
 
 .def_btn {
+  text-transform: uppercase;
   font-size: 2rem;
   font-weight: bold;
   color: #FFFFFF;
@@ -1944,7 +1978,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-
+    backdrop-filter: blur(10px);
     background: $mainBgA;
     padding: 1rem 2.5rem;
     text-transform: uppercase;
@@ -1959,8 +1993,8 @@ nav {
 
   .more_info {
     @include _transition(.4s);
-    // display: none;
-    text-transform: capitalize;
+    color: $mainTextColor;
+
     font-size: 2rem;
     background: $subMainBg;
 
@@ -2081,7 +2115,7 @@ nav {
     margin-bottom: 2rem;
   }
 
-  background: #F2F2F2;
+  background: #FFF;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
   @include _border_radius(5px);
 
@@ -2336,7 +2370,7 @@ nav {
   span {
     display: block;
 
-    border: 2px solid $subMainBg;
+    border: 2px solid $mainBgBtn;
     background: #fff;
     cursor: pointer;
     width: 13px;
@@ -2353,7 +2387,7 @@ nav {
   &.__active_tab {
     span {
       border-color: transparent;
-      background: $subMainBg;
+      background: $mainBgBtn;
 
     }
   }
@@ -2405,10 +2439,12 @@ nav {
 }
 
 .shipping_points_item {
+  @include _border_radius(5px);
   padding: 40px 40px 10px;
-  color: #fff;
+  color: $mainTextColor;
   width: 100%;
-  background: $subMainBg;
+
+  background: #FFF;
   margin-bottom: 2rem;
 
   img {
@@ -2556,7 +2592,7 @@ nav {
 }
 
 .steps_grid_item {
-  background: #F2F2F2;
+  background: #FFF;
   position: relative;
   min-height: 14rem;
   display: flex;
@@ -2670,11 +2706,11 @@ nav {
   display: block;
   width: 0;
   height: 0;
-  border-top: 70px solid #FFF;
+  border-top: 70px solid $subMainBg;
   border-left: 120px solid transparent;
 
   &._gray {
-    border-top: 70px solid #F2F2F2;
+    border-top: 70px solid #FFF;
     right: -3rem;
 
     @media only screen and (max-width : 1100px) {
@@ -2692,11 +2728,11 @@ nav {
   display: block;
   width: 0;
   height: 0;
-  border-bottom: 70px solid #FFF;
+  border-bottom: 70px solid $subMainBg;
   border-left: 120px solid transparent;
 
   &._gray {
-    border-bottom: 70px solid #F2F2F2;
+    border-bottom: 70px solid #FFF;
     right: -3rem;
 
     @media only screen and (max-width : 1100px) {
@@ -2863,7 +2899,7 @@ nav {
   p {
     padding: .5rem;
     font-weight: bold;
-    color: #fff;
+    // color: #fff;
   }
 
   transform: translateY(-150%);
@@ -3009,6 +3045,15 @@ nav {
 .reviews_slider {
   min-height: 400px;
 
+  .slick-next,
+  .slick-prev {
+    transform: translate(0);
+  }
+
+  .slick-next {
+    transform: scale(-1, 1)
+  }
+
   .custom_slick_arrow {
     span {
 
@@ -3026,6 +3071,8 @@ nav {
 }
 
 .review {
+  position: relative;
+  background: #fff;
   margin: 0 6rem;
   @include _transition(.8s);
   @include _border_radius(5px);
@@ -3038,8 +3085,9 @@ nav {
   padding: 2.5rem 3.5rem;
   width: 320px;
   overflow: auto;
-  height: 200px;
+  height: auto;
   max-height: 400px;
+  border: 1px solid transparent;
 
   &::-webkit-scrollbar {
     display: none;
@@ -3050,7 +3098,7 @@ nav {
     // display: none;
   }
 
-  border: 1px solid transparent;
+
 
   &.slick-slide {
     @include _transition(.8s);
@@ -3068,11 +3116,19 @@ nav {
 
     }
 
-    border: 1px solid #0A2D1E;
+    border-color:#0A2D1E;
+
     min-width: 500px;
-    min-height: 400px;
+
     width: 500px;
-    height: auto;
+
+
+
+    .p {
+      transform: scale(1);
+      position: relative;
+    }
+
 
     //  margin: 0 4rem;
     @media only screen and (max-width : 1680px) {
@@ -3088,12 +3144,20 @@ nav {
     }
   }
 
+
+
   .p {
+    margin-top: 3rem;
+
+    transform-origin: 100% 0;
     //  display: inline-block;
+    @include _transition(.3s);
     width: 100%;
     height: 100%;
     overflow: hidden;
     text-overflow: clip;
+    transform: scale(1, 0);
+    position: absolute;
   }
 
   @media only screen and (max-width : 1368px) {
@@ -3103,6 +3167,11 @@ nav {
   @media only screen and (max-width : 1100px) {
     &::-webkit-scrollbar {
       display: block;
+    }
+
+    .p {
+      position: relative;
+      transform: scale(1);
     }
   }
 
@@ -3119,7 +3188,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-bottom: 3rem;
 
   img {
     margin-right: 1.5rem;
@@ -3134,6 +3202,7 @@ nav {
 .review_text {
   text-overflow: ellipsis;
   overflow: hidden;
+  @include _transition(.3s);
 }
 
 .section__questions {
@@ -3149,7 +3218,7 @@ nav {
     right: 0;
     width: 100%;
     height: 220px;
-    background: $subMainBg;
+    background: $mainBg;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -3752,7 +3821,7 @@ nav {
     grid-gap: 1rem;
     margin-right: 0;
     width: 100%;
-    background: #fff;
+    background: $subMainBg;
 
     padding: 0 1rem 2rem;
   }
@@ -3773,7 +3842,7 @@ nav {
   min-width: 200px;
   padding: 15px;
   @include _transition(.2s);
-  background: #F2F2F2;
+  background: #FFF;
   margin-bottom: 2rem;
 
   &:hover,
@@ -3838,7 +3907,7 @@ nav {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background: #F2F2F2;
+  background: #FFf;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
   @include _border_radius(5px);
 
@@ -3941,7 +4010,7 @@ nav {
     &.product__price {
       font-weight: bold;
       color: #FFFFFF;
-      background: $subMainBg;
+      background: $mainBgBtn;
     }
   }
 }
@@ -4141,7 +4210,7 @@ input {
     width: 100%;
     overflow: auto;
     max-height: 95%;
-    background: #f2f2f2;
+    background: #fff;
     padding: 7.2rem 3.4rem 4rem 2.7rem;
 
     .def_btn {
@@ -4238,10 +4307,11 @@ input {
 }
 
 .section__calculate {
-  @extend .section__about;
+  @extend .section__questions;
 
   .calculate__container {
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
 
     @media only screen and (max-width : 1100px) {
       align-items: center;
@@ -4276,19 +4346,22 @@ input {
 }
 
 .form__calculation {
-  max-width: 550px;
+  max-width: 750px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   width: 100%;
-  background: #f2f2f2;
+  background: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, .05);
   padding: 6rem 3rem 3rem;
   @include _border_radius(5px 5px 0 0px);
 }
 
 .calculate__title {
-  @media only screen and (max-width : 1100px) {
-    text-align: center;
+  text-align: center;
 
-  }
+  @media only screen and (max-width : 1100px) {}
 
 }
 
@@ -4420,10 +4493,11 @@ input {
   right: 35px;
 
   form {
+    width: 100%;
     position: absolute;
     opacity: 0;
     overflow: hidden;
-    width: 0%;
+
     @include _transition(.5s);
     // padding: 1rem;
     background: #fff;
@@ -4432,6 +4506,8 @@ input {
     position: relative;
     @include _border_radius(5px);
     overflow: hidden;
+    transform-origin: 100%;
+    transform: scale(0, 1);
   }
 
   &-input {
@@ -4478,7 +4554,7 @@ input {
   &.__show {
     form {
       opacity: 1;
-      width: 100%;
+      transform: scale(1);
     }
 
     z-index: 2;
@@ -4491,7 +4567,7 @@ input {
   }
 
   @media only screen and (max-width : 600px) {
-    width: 300px;
+    width: 250px;
     right: 35px;
 
     form {
@@ -4501,8 +4577,8 @@ input {
 
   }
 
-  @media only screen and (max-width : 360px) {
-    width: 250px;
+  @media only screen and (max-width : 320px) {
+    width: 220px;
 
   }
 
